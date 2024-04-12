@@ -1,7 +1,11 @@
-import os, argparse
+import argparse
+import os
 import sys
+
 import gradio as gr
+
 from scripts.gradio.i2v_test_application import Image2Video
+
 sys.path.insert(1, os.path.join(sys.path[0], 'lvdm'))
 
 

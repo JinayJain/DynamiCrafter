@@ -1,15 +1,17 @@
+import argparse
 import datetime
-import argparse, importlib
-from pytorch_lightning import seed_everything
+import importlib
 
 import torch
 import torch.distributed as dist
+from pytorch_lightning import seed_everything
+
 
 def setup_dist(local_rank):
     if dist.is_initialized():
         return
     torch.cuda.set_device(local_rank)
-    torch.distributed.init_process_group('nccl', init_method='env://')
+    torch.distributed.init_process_group("nccl", init_method="env://")
 
 
 def get_dist_info():
@@ -26,7 +28,7 @@ def get_dist_info():
     return rank, world_size
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     parser = argparse.ArgumentParser()
     parser.add_argument("--module", type=str, help="module name", default="inference")
@@ -43,5 +45,5 @@ if __name__ == '__main__':
     rank, gpu_num = get_dist_info()
 
     # inference_args.savedir = inference_args.savedir+str('_seed')+str(inference_args.seed)
-    print("@DynamiCrafter Inference [rank%d]: %s"%(rank, now))
+    print("@DynamiCrafter Inference [rank%d]: %s" % (rank, now))
     inference_api.run_inference(inference_args, gpu_num, rank)
