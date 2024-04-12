@@ -18,11 +18,11 @@ import torch.nn as nn
 from torchvision.utils import make_grid
 import pytorch_lightning as pl
 from utils.utils import instantiate_from_config
-from lvdm.ema import LitEma
-from lvdm.distributions import DiagonalGaussianDistribution
-from lvdm.models.utils_diffusion import make_beta_schedule, rescale_zero_terminal_snr
-from lvdm.basics import disabled_train
-from lvdm.common import (
+from dynamicrafter.ema import LitEma
+from dynamicrafter.distributions import DiagonalGaussianDistribution
+from dynamicrafter.models.utils_diffusion import make_beta_schedule, rescale_zero_terminal_snr
+from dynamicrafter.basics import disabled_train
+from dynamicrafter.common import (
     extract_into_tensor,
     noise_like,
     exists,

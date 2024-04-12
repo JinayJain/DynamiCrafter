@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 import torch
 import torch.distributed as dist
+import os
 
 
 def count_params(model, verbose=False):

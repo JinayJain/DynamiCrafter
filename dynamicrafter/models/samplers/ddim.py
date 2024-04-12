@@ -1,9 +1,9 @@
 import numpy as np
 from tqdm import tqdm
 import torch
-from lvdm.models.utils_diffusion import make_ddim_sampling_parameters, make_ddim_timesteps, rescale_noise_cfg
-from lvdm.common import noise_like
-from lvdm.common import extract_into_tensor
+from dynamicrafter.models.utils_diffusion import make_ddim_sampling_parameters, make_ddim_timesteps, rescale_noise_cfg
+from dynamicrafter.common import noise_like
+from dynamicrafter.common import extract_into_tensor
 import copy
 
 

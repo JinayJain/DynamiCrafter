@@ -11,8 +11,8 @@ import torchvision.transforms as transforms
 from pytorch_lightning import seed_everything
 from PIL import Image
 sys.path.insert(1, os.path.join(sys.path[0], '..', '..'))
-from lvdm.models.samplers.ddim import DDIMSampler
-from lvdm.models.samplers.ddim_multiplecond import DDIMSampler as DDIMSampler_multicond
+from dynamicrafter.models.samplers.ddim import DDIMSampler
+from dynamicrafter.models.samplers.ddim_multiplecond import DDIMSampler as DDIMSampler_multicond
 from utils.utils import instantiate_from_config
 
 

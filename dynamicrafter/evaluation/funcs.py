@@ -7,7 +7,7 @@ import cv2
 import torch
 import torchvision
 sys.path.insert(1, os.path.join(sys.path[0], '..', '..'))
-from lvdm.models.samplers.ddim import DDIMSampler
+from dynamicrafter.models.samplers.ddim import DDIMSampler
 from einops import rearrange
 
 
