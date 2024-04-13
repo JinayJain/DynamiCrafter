@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 from torch.utils.checkpoint import checkpoint
 from transformers import CLIPTextModel, CLIPTokenizer, T5EncoderModel, T5Tokenizer
-from utils.utils import count_params
+from dynamicrafter.utils.utils import count_params
 
 from dynamicrafter.common import autocast
 

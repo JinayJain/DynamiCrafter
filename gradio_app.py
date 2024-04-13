@@ -4,9 +4,9 @@ import sys
 
 import gradio as gr
 
-from scripts.gradio.i2v_test import Image2Video
+from dynamicrafter.gradio.i2v_test import Image2Video
 
-sys.path.insert(1, os.path.join(sys.path[0], 'lvdm'))
+sys.path.insert(1, os.path.join(sys.path[0], 'dynamicrafter'))
 
 i2v_examples_1024 = [
     ['prompts/1024/astronaut04.png', 'a man in an astronaut suit playing a guitar', 50, 7.5, 1.0, 6, 123],

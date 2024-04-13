@@ -1,5 +1,5 @@
 model:
-  target: lvdm.models.ddpm3d.LatentVisualDiffusion
+  target: dynamicrafter.models.ddpm3d.LatentVisualDiffusion
   params:
     linear_start: 0.00085
     linear_end: 0.012
@@ -16,7 +16,7 @@ model:
     use_ema: False
     uncond_type: 'empty_seq'
     unet_config:
-      target: lvdm.modules.networks.openaimodel3d.UNetModel
+      target: dynamicrafter.modules.networks.openaimodel3d.UNetModel
       params:
         in_channels: 8
         out_channels: 4
@@ -50,7 +50,7 @@ model:
         fs_condition: true
 
     first_stage_config:
-      target: lvdm.models.autoencoder.AutoencoderKL
+      target: dynamicrafter.models.autoencoder.AutoencoderKL
       params:
         embed_dim: 4
         monitor: val/rec_loss
@@ -73,18 +73,18 @@ model:
           target: torch.nn.Identity
 
     cond_stage_config:
-      target: lvdm.modules.encoders.condition.FrozenOpenCLIPEmbedder
+      target: dynamicrafter.modules.encoders.condition.FrozenOpenCLIPEmbedder
       params:
         freeze: true
         layer: "penultimate"
 
     img_cond_stage_config:
-      target: lvdm.modules.encoders.condition.FrozenOpenCLIPImageEmbedderV2
+      target: dynamicrafter.modules.encoders.condition.FrozenOpenCLIPImageEmbedderV2
       params:
         freeze: true
     
     image_proj_stage_config:
-      target: lvdm.modules.encoders.resampler.Resampler
+      target: dynamicrafter.modules.encoders.resampler.Resampler
       params:
         dim: 1024
         depth: 4

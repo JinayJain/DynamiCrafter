@@ -17,7 +17,7 @@ import torch.nn as nn
 from einops import rearrange, repeat
 from torchvision.utils import make_grid
 from tqdm import tqdm
-from utils.utils import instantiate_from_config
+from dynamicrafter.utils.utils import instantiate_from_config
 
 from dynamicrafter.basics import disabled_train
 from dynamicrafter.common import default, exists, extract_into_tensor, noise_like

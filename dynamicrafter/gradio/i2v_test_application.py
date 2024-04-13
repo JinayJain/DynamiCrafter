@@ -7,7 +7,7 @@ from einops import repeat
 from huggingface_hub import hf_hub_download
 from omegaconf import OmegaConf
 from pytorch_lightning import seed_everything
-from utils.utils import instantiate_from_config
+from dynamicrafter.utils.utils import instantiate_from_config
 
 from dynamicrafter.evaluation.funcs import (
     batch_ddim_sampling,

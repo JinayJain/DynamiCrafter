@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 from einops import rearrange
 from dynamicrafter.distributions import DiagonalGaussianDistribution
-from utils.utils import instantiate_from_config
+from dynamicrafter.utils.utils import instantiate_from_config
 
 from dynamicrafter.modules.attention import LinearAttention
 

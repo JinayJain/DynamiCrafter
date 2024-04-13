@@ -24,7 +24,7 @@ else
 fi
 
 # if [ "$1" == "256" ]; then
-# CUDA_VISIBLE_DEVICES=2 python3 scripts/evaluation/inference.py \
+# CUDA_VISIBLE_DEVICES=2 python3 dynamicrafter/evaluation/inference.py \
 # --seed 123 \
 # --ckpt_path $ckpt \
 # --config $config \
@@ -39,7 +39,7 @@ fi
 # --video_length 16 \
 # --frame_stride ${FS}
 # else
-# CUDA_VISIBLE_DEVICES=2 python3 scripts/evaluation/inference.py \
+# CUDA_VISIBLE_DEVICES=2 python3 dynamicrafter/evaluation/inference.py \
 # --seed 123 \
 # --ckpt_path $ckpt \
 # --config $config \
@@ -65,7 +65,7 @@ fi
 if [ "$1" == "256" ]; then
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m torch.distributed.launch \
 --nproc_per_node=8 --nnodes=1 --master_addr=127.0.0.1 --master_port=23456 --node_rank=0 \
-scripts/evaluation/ddp_wrapper.py \
+dynamicrafter/evaluation/ddp_wrapper.py \
 --module 'inference' \
 --seed ${seed} \
 --ckpt_path $ckpt \
@@ -83,7 +83,7 @@ scripts/evaluation/ddp_wrapper.py \
 else
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m torch.distributed.launch \
 --nproc_per_node=8 --nnodes=1 --master_addr=127.0.0.1 --master_port=23456 --node_rank=0 \
-scripts/evaluation/ddp_wrapper.py \
+dynamicrafter/evaluation/ddp_wrapper.py \
 --module 'inference' \
 --seed ${seed} \
 --ckpt_path $ckpt \

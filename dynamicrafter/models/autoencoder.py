@@ -4,7 +4,7 @@ import pytorch_lightning as pl
 import torch
 import torch.nn.functional as F
 from einops import rearrange
-from utils.utils import instantiate_from_config
+from dynamicrafter.utils.utils import instantiate_from_config
 
 from dynamicrafter.distributions import DiagonalGaussianDistribution
 from dynamicrafter.modules.networks.ae_modules import Decoder, Encoder
